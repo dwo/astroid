@@ -27,7 +27,6 @@ from astroid.nodes.node_classes import (  # pylint: disable=redefined-builtin (E
     CONST_CLS,
     AnnAssign,
     Arguments,
-    Assert,
     Assign,
     AssignAttr,
     AssignName,
@@ -54,7 +53,6 @@ from astroid.nodes.node_classes import (  # pylint: disable=redefined-builtin (E
     EmptyNode,
     EvaluatedObject,
     ExceptHandler,
-    Expr,
     ExtSlice,
     For,
     FormattedValue,
@@ -83,7 +81,6 @@ from astroid.nodes.node_classes import (  # pylint: disable=redefined-builtin (E
     Nonlocal,
     Pass,
     Pattern,
-    Raise,
     Return,
     Set,
     Slice,
@@ -111,11 +108,13 @@ from astroid.nodes.scoped_nodes import (
     GeneratorExp,
     Lambda,
     ListComp,
+    LocalsDictNodeNG,
     Module,
     SetComp,
     builtin_lookup,
     function_to_method,
 )
+from astroid.nodes.statement import Assert, Expr, Raise
 
 ALL_NODE_CLASSES = (
     AnnAssign,
@@ -169,6 +168,7 @@ ALL_NODE_CLASSES = (
     Lambda,
     List,
     ListComp,
+    LocalsDictNodeNG,
     Match,
     MatchAs,
     MatchCase,
