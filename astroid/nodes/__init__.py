@@ -95,6 +95,7 @@ from astroid.nodes.node_classes import (  # pylint: disable=redefined-builtin (E
     With,
     Yield,
     YieldFrom,
+    _BaseContainer,
     are_exclusive,
     const_factory,
     unpack_infer,
@@ -111,12 +112,15 @@ from astroid.nodes.scoped_nodes import (
     LocalsDictNodeNG,
     Module,
     SetComp,
+    _is_metaclass,
     builtin_lookup,
     function_to_method,
+    get_wrapping_class,
 )
 from astroid.nodes.statement import Assert, Expr, Raise
 
 ALL_NODE_CLASSES = (
+    _BaseContainer,
     AnnAssign,
     Arguments,
     Assert,
@@ -212,5 +216,7 @@ __all__ = [
     "const_factory",
     "unpack_infer",
     "function_to_method",
+    "_is_metaclass",
+    "get_wrapping_class",
 ]
 __all__ += [c.__name__ for c in ALL_NODE_CLASSES]
